@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+    <title>Corona Virus Tracker Application</title>
+    <link href="bootstrap.css" rel="stylesheet">
+    <link href="jumbotron.css" rel="stylesheet">
+  </head>
+  <body class="container">
+    <main role="main"> 
+		<h3 class="display-3 mx-auto p-4 text-center">Corona Virus Tracker Application</h3> 
+		<p class="col-12 text-center"><a href="https://github.com.cnpmjs.org/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv">Data Source</a></p>
+		      
+  		<div class="jumbotron row d-flex justify-content-around">
+	  		<div class="alert alert-danger col-4 p-4" role="alert">
+			 <span class="font-weight-bold display-2" th:text="${total}"></span>
+			 <br>
+			 <p>Total of Cases as of Today </p>
+			</div>
+			<div class="alert alert-danger col-4 p-4" role="alert">
+			 <span class="font-weight-bold display-2" th:text="${total_yesterday}"></span>
+			 <br>
+			 <p>Total of Cases as of Yesterday </p>
+			 </div>
+			 <p class="col-12 text-center">The increase was about: <span class="font-weight-bold" th:text="${increase}"></span></p>
+  		</div>
+       
+      <div class="container">
+		      <table class="table stripped">
+		      <tr>
+		        <th>State</th>
+		        <th>Country</th>
+		        <th>Total</th>
+		      </tr>
+		      <tr th:each="case: ${cases}">
+		        <td th:text="${case.state}"></td>
+		        <td th:text="${case.country}"></td>
+		        <td th:text="${case.latestTotal}">0</td>
+		      </tr>
+		    </table>
+      </div>
+
+    </main>
+    <hr>
+    <footer class="container">
+      <p>Idea from <a href="https://www.youtube.com/watch?v=8hjNG9GZGnQ&t=3s">JavaBrain</a> tutorial</p>
+    </footer>
+  </body>
+</html>
