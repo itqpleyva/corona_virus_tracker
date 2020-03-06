@@ -1,2 +1,2 @@
-# corona_virus_trackersrc
-<img src="/main/resources/static/">
+# corona_virus_tracker
+<img src="/main/resources/static/img.jpg">
